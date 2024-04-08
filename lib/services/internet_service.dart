@@ -2,12 +2,14 @@ import 'dart:async';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+// States of Internet connection
 enum InternetState {
   initial,
   lost,
   gained,
 }
 
+// Internet connectivity Bloc
 class InternetCubit extends Cubit<InternetState> {
   final Connectivity _connectivity = Connectivity();
   StreamSubscription? streamSubscription;

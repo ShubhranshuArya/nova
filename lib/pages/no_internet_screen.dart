@@ -4,6 +4,7 @@ import 'package:nova/constants/colors.dart';
 import 'package:nova/constants/strings.dart';
 import 'package:nova/constants/widgets.dart';
 
+// No Internet connectivity screen
 class NoInternetScreen extends StatelessWidget {
   const NoInternetScreen({Key? key}) : super(key: key);
 

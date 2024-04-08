@@ -6,17 +6,20 @@ import 'package:nova/constants/strings.dart';
 import 'package:nova/constants/widgets.dart';
 import 'package:nova/models/transaction_model.dart';
 import 'package:nova/pages/no_internet_screen.dart';
-import 'package:nova/pages/txn_card.dart';
+import 'package:nova/widgets/txn_card.dart';
 import 'package:nova/services/internet_service.dart';
 import 'package:nova/services/obp_service.dart';
 import 'package:intl/intl.dart';
 
+// States of Transaction Filter
 enum TxnFilter {
   all,
   sent,
   received,
 }
 
+
+// Transaction Page for a chosen bank account
 class TransactionsPage extends StatefulWidget {
   final String userToken;
   final String bankId;
@@ -42,6 +45,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
   TxnFilter selectedFilter = TxnFilter.all;
   bool isTransactionLoaded = false;
 
+  // Initializes the transaction list
   getTxnList() async {
     transactionsList = await OBPService().getTransactionsOBP(
       widget.userToken,
@@ -58,6 +62,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
     }
   }
 
+  // Chip filtering transactions
   filteredTxnList(TxnFilter txnFilter) {
     if (selectedFilter != TxnFilter.sent && txnFilter == TxnFilter.sent) {
       setState(() {
@@ -157,7 +162,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                                     : primaryBg,
                               ),
                             ),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             GestureDetector(
                               onTap: () => filteredTxnList(TxnFilter.sent),
                               child: Chip(

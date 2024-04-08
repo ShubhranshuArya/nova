@@ -13,6 +13,7 @@ import 'package:nova/services/obp_service.dart';
 import 'package:nova/widgets/logout_dialog_box.dart';
 import 'package:page_transition/page_transition.dart';
 
+// Home Page
 class BanksPage extends StatefulWidget {
   final String userToken;
   final String emailId;
@@ -33,6 +34,7 @@ class _BanksPageState extends State<BanksPage> {
   BankModel? searchedBanksList;
   bool isDataLoaded = false;
 
+  // Initializes banksList
   getBanksList() async {
     banksList = await OBPService().getBanksOBP(widget.userToken);
     searchedBanksList = banksList;
@@ -45,6 +47,7 @@ class _BanksPageState extends State<BanksPage> {
     }
   }
 
+  // On pressing bank list item
   bankButton(String bankName, String bankId) {
     Navigator.of(context)
         .push(
@@ -64,6 +67,7 @@ class _BanksPageState extends State<BanksPage> {
         .whenComplete(() => updateBanks());
   }
 
+  // Updating searched banks list
   updateBanks() {
     setState(() {
       _bankController.clear();
@@ -71,6 +75,7 @@ class _BanksPageState extends State<BanksPage> {
     });
   }
 
+  // On search for a bank
   searchBank(String bankName) {
     if (bankName.isEmpty) {
       updateBanks();
@@ -124,7 +129,7 @@ class _BanksPageState extends State<BanksPage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -234,11 +239,10 @@ class _BanksPageState extends State<BanksPage> {
                               ),
                               const SizedBox(height: 12),
                               customText(
-                                text: 'No Banks found',
-                                size: 18.sp,
-                                color: primaryTextColor,
-                                fontWeight: FontWeight.w500
-                              ),
+                                  text: 'No Banks found',
+                                  size: 18.sp,
+                                  color: primaryTextColor,
+                                  fontWeight: FontWeight.w500),
                             ],
                           )
                         : Expanded(
@@ -283,9 +287,8 @@ class _BanksPageState extends State<BanksPage> {
                                               ),
                                             ),
                                             child: Padding(
-                                              padding: EdgeInsets.all(2),
+                                              padding: const EdgeInsets.all(2),
                                               child: Container(
-                                                
                                                 decoration: BoxDecoration(
                                                   color: primaryBg,
                                                   borderRadius:
@@ -311,11 +314,18 @@ class _BanksPageState extends State<BanksPage> {
                                                           errorBuilder: (context,
                                                                   error,
                                                                   stackTrace) =>
-                                                              Text('data'),
+                                                              Image.asset(
+                                                            defaultBankImg,
+                                                            width: 20,
+                                                            height: 20,
+                                                            fit: BoxFit.cover,
+                                                          ),
                                                         );
                                                       } else {
                                                         return Padding(
-                                                          padding: const EdgeInsets.all(12.0),
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(12.0),
                                                           child: Image.asset(
                                                             defaultBankImg,
                                                             width: 20,
@@ -329,9 +339,8 @@ class _BanksPageState extends State<BanksPage> {
                                             ),
                                           ),
                                           Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12, 0, 0, 0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(12, 0, 0, 0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:

@@ -12,6 +12,7 @@ import 'package:nova/services/internet_service.dart';
 import 'package:nova/services/obp_service.dart';
 import 'package:page_transition/page_transition.dart';
 
+// Account Page for a selected Bank
 class AccountsPage extends StatefulWidget {
   final String userToken;
   final String bankName;
@@ -33,13 +34,11 @@ class _AccountsPageState extends State<AccountsPage> {
   AccountModel? searchedAccountsList;
   bool isAccountsLoaded = false;
 
+  // Initializes the accounts list
   getAccountsList() async {
     accountsList =
         await OBPService().getAccountsOBP(widget.userToken, widget.bankId);
     searchedAccountsList = accountsList;
-    accountsList!.accounts.forEach((element) {
-      print(element.balances![0].currency!);
-    });
     if (accountsList != null) {
       Future.delayed(const Duration(milliseconds: 350), () {
         setState(() {
@@ -49,6 +48,7 @@ class _AccountsPageState extends State<AccountsPage> {
     }
   }
 
+  // On pressing bank account item
   bankAccountBtn(
     String accountId,
     String balance,
@@ -72,7 +72,8 @@ class _AccountsPageState extends State<AccountsPage> {
         )
         .whenComplete(() => updateAccounts());
   }
-
+  
+  // Updating searched accounts list
   updateAccounts() {
     setState(() {
       _accountController.clear();
@@ -80,6 +81,7 @@ class _AccountsPageState extends State<AccountsPage> {
     });
   }
 
+  // Searching for an account by ID
   searchAccount(String accountId) {
     if (accountId.isEmpty) {
       updateAccounts();
@@ -119,7 +121,7 @@ class _AccountsPageState extends State<AccountsPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Align(
-                  alignment: AlignmentDirectional(-1, 0),
+                  alignment: const AlignmentDirectional(-1, 0),
                   child: Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(10, 16, 0, 0),
                     child: InkWell(

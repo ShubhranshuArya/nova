@@ -6,6 +6,8 @@ import 'package:nova/pages/login_page.dart';
 import 'package:nova/services/obp_service.dart';
 import 'package:page_transition/page_transition.dart';
 
+
+// Custom Logout Dialog box
 class LogoutDialogBox extends StatelessWidget {
   final String userToken;
   const LogoutDialogBox({super.key, required this.userToken});
@@ -37,7 +39,7 @@ class LogoutDialogBox extends StatelessWidget {
                     Navigator.of(context).pop();
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(4),
@@ -64,7 +66,7 @@ class LogoutDialogBox extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                     decoration: BoxDecoration(
                       color: errorColor,
                       borderRadius: BorderRadius.circular(4),

@@ -9,15 +9,18 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 
+// Entry point of the application.
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    
     return ScreenUtilInit(
-      designSize: const Size(414, 896),
+      designSize:  const Size(414, 896),
       splitScreenMode: false,
       builder: (context, child) {
+        
         return BlocProvider(
           create: (context) => InternetCubit(),
           child: MaterialApp(
@@ -25,12 +28,8 @@ class MyApp extends StatelessWidget {
             title: 'Nova',
             home: BlocBuilder<InternetCubit, InternetState>(
               builder: (context, state) {
-                if (state == InternetState.initial) {
-                  return const Scaffold();
-                } else if (state == InternetState.gained) {
-                  return const LoginPage();
-                }
-                return const NoInternetScreen();
+                
+                return const LoginPage();
               
               },
             ),

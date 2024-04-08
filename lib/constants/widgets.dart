@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 
+
+// Reusable text widget
 Widget customText({
   required String text,
   required double size,
@@ -26,17 +28,18 @@ Widget customText({
   );
 }
 
+// Function to fetch username from email id.
 String getUserName(String input) {
   List<String> parts = input.split('.');
   String firstWord = parts[0];
   String capitalizedFirstLetter = firstWord[0].toUpperCase();
   String capitalizedWord = capitalizedFirstLetter + firstWord.substring(1);
 
-  print(input);
-
   return capitalizedWord;
 }
 
+
+// Function to manipulate balance text
 String getCurrencyText(String currency, String value) {
   bool isNegative = false;
   if (value.startsWith('-')) {
@@ -52,14 +55,15 @@ String getCurrencyText(String currency, String value) {
       return isNegative ? '-€$value' : '€$value';
     case 'HKD':
       return isNegative ? '-HK\$$value' : 'HK\$$value';
-    // Add more cases for other currency codes if needed
     default:
       return isNegative
           ? '-$currency$value'
-          : '$currency $value'; // Return empty string for unknown currency codes
+          : '$currency $value';
   }
 }
 
+
+// Function to validate bank logo url
 Future<String> validateLogoUrl(String? logoUrl) async {
   try {
     final response = await http.get(Uri.parse(logoUrl!));

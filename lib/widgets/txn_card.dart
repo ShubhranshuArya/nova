@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:nova/constants/colors.dart';
 import 'package:nova/constants/widgets.dart';
 
+// Transaction card for every bank account.
 class TxnCard extends StatelessWidget {
   final String balance;
   final String bankId;
   final String bankName;
   final String accountId;
-  const TxnCard(
-      {super.key,
-      required this.balance,
-      required this.bankId,
-      required this.bankName,
-      required this.accountId});
+  const TxnCard({
+    super.key,
+    required this.balance,
+    required this.bankId,
+    required this.bankName,
+    required this.accountId,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return // Generated code for this Container Widget...
-        Padding(
+    return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
       child: Container(
         width: double.infinity,
@@ -79,7 +80,7 @@ class TxnCard extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 12, 0, 4),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 4),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

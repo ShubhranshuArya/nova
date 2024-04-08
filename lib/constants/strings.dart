@@ -1,3 +1,8 @@
+//********************************************
+// Constant Strings used in the app
+//********************************************
+
+// API Generated consumer_key 
 const String consumerKey = 'oa5ppybnxquwbdhccdlxcikasrhteyyg2rcdx2nw';
 
 // App Image String

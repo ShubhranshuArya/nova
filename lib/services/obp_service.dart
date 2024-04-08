@@ -8,6 +8,7 @@ import 'package:nova/models/bank_model.dart';
 import 'package:nova/models/transaction_model.dart';
 
 class OBPService {
+
   // User Authentication
   Future<String?> loginOBP(
     String username,
@@ -20,7 +21,7 @@ class OBPService {
         url,
         headers: {
           'Authorization':
-              'DirectLogin username=susan.uk.29@example.com, password=2b78e8, consumer_key="$consumerKey"',
+              'DirectLogin username="$username", password="$password", consumer_key="$consumerKey"',
           'Content-Type': 'application/json'
         },
       );
@@ -83,7 +84,7 @@ class OBPService {
         return accountModel;
       }
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
     return null;
   }
@@ -110,7 +111,7 @@ class OBPService {
         return transactionModel;
       }
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
     return null;
   }
@@ -129,9 +130,10 @@ class OBPService {
           'Content-Type': 'application/json'
         },
       );
+      debugPrint(response.body);
       
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
   }
 }

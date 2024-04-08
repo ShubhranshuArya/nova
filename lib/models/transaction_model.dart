@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 TransactionModel transactionModelFromJson(String str) => TransactionModel.fromJson(json.decode(str));
-
 String transactionModelToJson(TransactionModel data) => json.encode(data.toJson());
 
+// Json parsing for transactions
 class TransactionModel {
     List<Transaction> transactions;
 

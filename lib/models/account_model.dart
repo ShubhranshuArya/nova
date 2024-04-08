@@ -1,12 +1,9 @@
-// To parse this JSON data, do
-//
-//     final accountModel = accountModelFromJson(jsonString);
 import 'dart:convert';
 
 AccountModel accountModelFromJson(String str) => AccountModel.fromJson(jsonDecode(str));
-
 String accountModelToJson(AccountModel data) => json.encode(data.toJson());
 
+// Json Parsing for Accounts.
 class AccountModel {
     List<Account> accounts;
 

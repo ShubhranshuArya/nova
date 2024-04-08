@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,7 +9,9 @@ import 'package:nova/constants/widgets.dart';
 import 'package:nova/pages/banks_page.dart';
 import 'package:nova/services/obp_service.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
+// User Login page
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -18,8 +22,10 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _emailController = TextEditingController();
   final _pdController = TextEditingController();
+  bool isWeb = kIsWeb;
   String? userToken;
 
+  // On pressing Login button
   loginBtn() async {
     if (_emailController.text.isEmpty || _pdController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -35,7 +41,6 @@ class _LoginPageState extends State<LoginPage> {
       );
     } else {
       userToken = await OBPService().loginOBP(
-        //todo: make this reactive
         _emailController.text,
         _pdController.text,
       );
@@ -46,10 +51,9 @@ class _LoginPageState extends State<LoginPage> {
             type: PageTransitionType.rightToLeftWithFade,
             duration: const Duration(milliseconds: 400),
             curve: Curves.ease,
-            //todo: make emailId reactive
             child: BanksPage(
               userToken: userToken!,
-              emailId: 'susan.uk.29@example.com',
+              emailId: _emailController.text,
             ),
             // ignore: unnecessary_this
             childCurrent: this.widget,
@@ -81,19 +85,19 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
+              padding: isWeb ? const EdgeInsetsDirectional.fromSTEB(0, 120, 0, 0) :const EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.asset(
                   novaAppIcon,
-                  width: 200,
+                  width:  200,
                   height: 200,
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             Align(
-              alignment: AlignmentDirectional(0, 0),
+              alignment: const AlignmentDirectional(0, 0),
               child: customText(
                 text: 'Sign In',
                 size: 32,
@@ -102,90 +106,97 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16, 40, 16, 0),
-              child: TextField(
-                controller: _emailController,
-                cursorColor: secondaryTextColor,
-                decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 2.r,
-                      color: borderColor,
+              child: SizedBox(
+                width: isWeb ? 400 : double.infinity,
+                child: TextField(
+                
+                  controller: _emailController,
+                  cursorColor: secondaryTextColor,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        width: 2.r,
+                        color: borderColor,
+                      ),
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 2.r,
-                      color: borderColor,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        width: 2.r,
+                        color: borderColor,
+                      ),
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 2.r,
-                      color: borderColor,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        width: 2.r,
+                        color: borderColor,
+                      ),
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
-                    borderRadius: BorderRadius.circular(12.r),
+                    hintText: 'Email',
+                    hintStyle: GoogleFonts.poppins(
+                      color: primaryTextColor,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
-                  hintText: 'Email',
-                  hintStyle: GoogleFonts.poppins(
+                  keyboardType: TextInputType.text,
+                  style: GoogleFonts.poppins(
                     color: primaryTextColor,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.normal,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
                   ),
-                ),
-                keyboardType: TextInputType.text,
-                style: GoogleFonts.poppins(
-                  color: primaryTextColor,
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(16, 16, 16, 0),
-              child: TextField(
-                controller: _pdController,
-                cursorColor: secondaryTextColor,
-                decoration: InputDecoration(
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 2.r,
-                      color: borderColor,
+              child: SizedBox(
+                width: isWeb ? 400 : double.infinity,
+                child: TextField(
+                  controller: _pdController,
+                  cursorColor: secondaryTextColor,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        width: 2.r,
+                        color: borderColor,
+                      ),
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 2.r,
-                      color: borderColor,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        width: 2.r,
+                        color: borderColor,
+                      ),
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
-                    borderRadius: BorderRadius.circular(12.r),
-                  ),
-                  border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 2.r,
-                      color: borderColor,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        width: 2.r,
+                        color: borderColor,
+                      ),
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
-                    borderRadius: BorderRadius.circular(12.r),
+                    hintText: 'Password',
+                    hintStyle: GoogleFonts.poppins(
+                      color: primaryTextColor,
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
-                  hintText: 'Password',
-                  hintStyle: GoogleFonts.poppins(
+                  keyboardType: TextInputType.text,
+                  style: GoogleFonts.poppins(
                     color: primaryTextColor,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.normal,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
                   ),
-                ),
-                keyboardType: TextInputType.text,
-                style: GoogleFonts.poppins(
-                  color: primaryTextColor,
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
               child: GestureDetector(
                 onTap: loginBtn,
                 child: Container(
