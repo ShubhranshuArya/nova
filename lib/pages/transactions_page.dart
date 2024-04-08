@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nova/constants/colors.dart';
 import 'package:nova/constants/strings.dart';
 import 'package:nova/constants/widgets.dart';
@@ -135,7 +134,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                   padding: const EdgeInsetsDirectional.fromSTEB(24, 32, 24, 0),
                   child: customText(
                     text: 'Transactions',
-                    size: 22.sp,
+                    size: 22,
                     color: primaryTextColor,
                     fontWeight: FontWeight.w600,
                   ),
@@ -152,7 +151,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                               child: Chip(
                                 label: customText(
                                   text: 'All',
-                                  size: 12.sp,
+                                  size: 12,
                                   color: selectedFilter == TxnFilter.all
                                     ? primaryBg
                                     : primaryTextColor,
@@ -168,7 +167,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                               child: Chip(
                                 label: customText(
                                   text: 'Sent',
-                                  size: 12.sp,
+                                  size: 12,
                                   color: selectedFilter == TxnFilter.sent
                                     ? primaryBg
                                     : primaryTextColor,
@@ -184,7 +183,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                               child: Chip(
                                 label: customText(
                                   text: 'Received',
-                                  size: 12.sp,
+                                  size: 12,
                                   color: selectedFilter == TxnFilter.received
                                     ? primaryBg
                                     : primaryTextColor,
@@ -222,7 +221,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                                 const SizedBox(height: 12),
                                 customText(
                                   text: 'No Transaction Done',
-                                  size: 18.sp,
+                                  size: 18,
                                   color: primaryTextColor,
                                   fontWeight: FontWeight.w500
                                 ),
@@ -286,7 +285,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                                           children: [
                                             customText(
                                               text: type,
-                                              size: 14.sp,
+                                              size: 14,
                                               color: primaryTextColor,
                                               fontWeight: FontWeight.w500,
                                             ),
@@ -294,13 +293,13 @@ class _TransactionsPageState extends State<TransactionsPage> {
                                               text: description.length > 20
                                                   ? description.substring(0, 20)
                                                   : description,
-                                              size: 12.sp,
+                                              size: 12,
                                               color: primaryTextColor,
                                               fontWeight: FontWeight.w400,
                                             ),
                                             customText(
                                               text: time,
-                                              size: 12.sp,
+                                              size: 12,
                                               color: primaryTextColor,
                                               fontWeight: FontWeight.w400,
                                             ),
@@ -310,7 +309,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                                           width: 180,
                                           child: customText(
                                             text: amountText,
-                                            size: 22.sp,
+                                            size: 22,
                                             color: amountColor,
                                             fontWeight: FontWeight.w700,
                                             alignment: TextAlign.end,
@@ -323,7 +322,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
                               ),
                             ),
                           ),
-                SizedBox(height: 20.h)
+                SizedBox(height: 20)
               ],
             ),
           ),

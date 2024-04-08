@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nova/constants/colors.dart';
 import 'package:nova/constants/strings.dart';
@@ -122,7 +121,7 @@ class _BanksPageState extends State<BanksPage> {
                         const EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
                     child: customText(
                       text: 'Hi ${getUserName(widget.emailId)},',
-                      size: 22.sp,
+                      size: 22,
                       fontWeight: FontWeight.w600,
                       color: primaryColor,
                     ),
@@ -136,7 +135,7 @@ class _BanksPageState extends State<BanksPage> {
                     children: [
                       customText(
                         text: 'My Banks',
-                        size: 24.sp,
+                        size: 24,
                         fontWeight: FontWeight.w600,
                         color: primaryTextColor,
                       ),
@@ -168,30 +167,30 @@ class _BanksPageState extends State<BanksPage> {
                     cursorColor: secondaryTextColor,
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 2.r,
+                        borderSide: const BorderSide(
+                          width: 2,
                           color: borderColor,
                         ),
-                        borderRadius: BorderRadius.circular(12.r),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 2.r,
+                        borderSide: const BorderSide(
+                          width: 2,
                           color: borderColor,
                         ),
-                        borderRadius: BorderRadius.circular(12.r),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 2.r,
+                        borderSide: const BorderSide(
+                          width: 2,
                           color: borderColor,
                         ),
-                        borderRadius: BorderRadius.circular(12.r),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Search for a Bank',
                       hintStyle: GoogleFonts.poppins(
                         color: primaryTextColor,
-                        fontSize: 14.sp,
+                        fontSize: 14,
                         fontWeight: FontWeight.normal,
                       ),
                       contentPadding:
@@ -212,7 +211,7 @@ class _BanksPageState extends State<BanksPage> {
                     keyboardType: TextInputType.text,
                     style: GoogleFonts.poppins(
                       color: primaryTextColor,
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontWeight: FontWeight.normal,
                     ),
                     onChanged: (value) {
@@ -240,7 +239,7 @@ class _BanksPageState extends State<BanksPage> {
                               const SizedBox(height: 12),
                               customText(
                                   text: 'No Banks found',
-                                  size: 18.sp,
+                                  size: 18,
                                   color: primaryTextColor,
                                   fontWeight: FontWeight.w500),
                             ],
@@ -349,17 +348,17 @@ class _BanksPageState extends State<BanksPage> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 SizedBox(
-                                                  width: 260.w,
+                                                  width: 260,
                                                   child: customText(
                                                     text: bankFullName,
-                                                    size: 16.sp,
+                                                    size: 16,
                                                     color: primaryTextColor,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                                 ),
                                                 customText(
                                                   text: bankId,
-                                                  size: 12.sp,
+                                                  size: 12,
                                                   color: primaryTextColor,
                                                   fontWeight: FontWeight.w400,
                                                 ),
@@ -374,8 +373,8 @@ class _BanksPageState extends State<BanksPage> {
                               },
                             ),
                           ),
-                SizedBox(
-                  height: 20.h,
+                const SizedBox(
+                  height: 20,
                 )
               ],
             ),

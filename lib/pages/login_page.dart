@@ -1,7 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nova/constants/colors.dart';
 import 'package:nova/constants/strings.dart';
@@ -32,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
         SnackBar(
           content: customText(
             text: 'Input Credentials',
-            size: 14.sp,
+            size: 14,
             fontWeight: FontWeight.bold,
             color: errorColor,
           ),
@@ -64,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
           SnackBar(
             content: customText(
               text: 'Invalid Credentials',
-              size: 14.sp,
+              size: 14,
               fontWeight: FontWeight.bold,
               color: errorColor,
             ),
@@ -85,12 +84,14 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: isWeb ? const EdgeInsetsDirectional.fromSTEB(0, 120, 0, 0) :const EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
+              padding: isWeb
+                  ? const EdgeInsetsDirectional.fromSTEB(0, 120, 0, 0)
+                  : const EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: Image.asset(
                   novaAppIcon,
-                  width:  200,
+                  width: 200,
                   height: 200,
                   fit: BoxFit.cover,
                 ),
@@ -109,30 +110,29 @@ class _LoginPageState extends State<LoginPage> {
               child: SizedBox(
                 width: isWeb ? 400 : double.infinity,
                 child: TextField(
-                
                   controller: _emailController,
                   cursorColor: secondaryTextColor,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        width: 2.r,
+                      borderSide: const BorderSide(
+                        width: 2,
                         color: borderColor,
                       ),
-                      borderRadius: BorderRadius.circular(12.r),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        width: 2.r,
+                      borderSide: const BorderSide(
+                        width: 2,
                         color: borderColor,
                       ),
-                      borderRadius: BorderRadius.circular(12.r),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        width: 2.r,
+                      borderSide: const BorderSide(
+                        width: 2,
                         color: borderColor,
                       ),
-                      borderRadius: BorderRadius.circular(12.r),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     hintText: 'Email',
                     hintStyle: GoogleFonts.poppins(
@@ -159,37 +159,37 @@ class _LoginPageState extends State<LoginPage> {
                   cursorColor: secondaryTextColor,
                   decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        width: 2.r,
+                      borderSide:const BorderSide(
+                        width: 2,
                         color: borderColor,
                       ),
-                      borderRadius: BorderRadius.circular(12.r),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        width: 2.r,
+                      borderSide:const BorderSide(
+                        width: 2,
                         color: borderColor,
                       ),
-                      borderRadius: BorderRadius.circular(12.r),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        width: 2.r,
+                      borderSide:const BorderSide(
+                        width: 2,
                         color: borderColor,
                       ),
-                      borderRadius: BorderRadius.circular(12.r),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     hintText: 'Password',
                     hintStyle: GoogleFonts.poppins(
                       color: primaryTextColor,
-                      fontSize: 14.sp,
+                      fontSize: 14,
                       fontWeight: FontWeight.normal,
                     ),
                   ),
                   keyboardType: TextInputType.text,
                   style: GoogleFonts.poppins(
                     color: primaryTextColor,
-                    fontSize: 16.sp,
+                    fontSize: 16,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -209,7 +209,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Center(
                     child: customText(
                       text: 'Sign In',
-                      size: 18.sp,
+                      size: 18,
                       color: primaryBg,
                       fontWeight: FontWeight.w600,
                     ),

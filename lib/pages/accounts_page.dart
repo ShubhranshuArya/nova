@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nova/constants/colors.dart';
 import 'package:nova/constants/strings.dart';
@@ -145,7 +144,7 @@ class _AccountsPageState extends State<AccountsPage> {
                         const EdgeInsetsDirectional.fromSTEB(24, 12, 24, 0),
                     child: customText(
                       text: widget.bankName,
-                      size: 18.sp,
+                      size: 18,
                       color: primaryTextColor,
                     ),
                   ),
@@ -169,30 +168,30 @@ class _AccountsPageState extends State<AccountsPage> {
                     cursorColor: secondaryTextColor,
                     decoration: InputDecoration(
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 2.r,
+                        borderSide: const BorderSide(
+                          width: 2,
                           color: borderColor,
                         ),
-                        borderRadius: BorderRadius.circular(12.r),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 2.r,
+                        borderSide: const BorderSide(
+                          width: 2,
                           color: borderColor,
                         ),
-                        borderRadius: BorderRadius.circular(12.r),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          width: 2.r,
+                        borderSide: const BorderSide(
+                          width: 2,
                           color: borderColor,
                         ),
-                        borderRadius: BorderRadius.circular(12.r),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       hintText: 'Search by Account Id',
                       hintStyle: GoogleFonts.poppins(
                         color: primaryTextColor,
-                        fontSize: 14.sp,
+                        fontSize: 14,
                         fontWeight: FontWeight.normal,
                       ),
                       contentPadding:
@@ -213,7 +212,7 @@ class _AccountsPageState extends State<AccountsPage> {
                     keyboardType: TextInputType.text,
                     style: GoogleFonts.poppins(
                       color: primaryTextColor,
-                      fontSize: 16.sp,
+                      fontSize: 16,
                       fontWeight: FontWeight.normal,
                     ),
                     onChanged: (value) {
@@ -241,7 +240,7 @@ class _AccountsPageState extends State<AccountsPage> {
                               const SizedBox(height: 12),
                               customText(
                                 text: 'No Account found',
-                                size: 18.sp,
+                                size: 18,
                                 color: primaryTextColor,
                                 fontWeight: FontWeight.w500
                               ),
@@ -294,13 +293,13 @@ class _AccountsPageState extends State<AccountsPage> {
                                             children: [
                                               customText(
                                                 text: widget.bankId,
-                                                size: 16.sp,
+                                                size: 16,
                                                 color: primaryTextColor,
                                                 fontWeight: FontWeight.w500,
                                               ),
                                               customText(
                                                 text: accountId,
-                                                size: 12.sp,
+                                                size: 12,
                                                 color: primaryTextColor,
                                                 fontWeight: FontWeight.w400,
                                               ),
@@ -308,7 +307,7 @@ class _AccountsPageState extends State<AccountsPage> {
                                           ),
                                           customText(
                                             text: currencyText,
-                                            size: 16.sp,
+                                            size: 16,
                                             color: amountColor,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -321,7 +320,7 @@ class _AccountsPageState extends State<AccountsPage> {
                             ),
                           ),
                 SizedBox(
-                  height: 20.h,
+                  height: 20,
                 )
               ],
             ),

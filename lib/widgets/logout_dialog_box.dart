@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nova/constants/colors.dart';
 import 'package:nova/constants/widgets.dart';
 import 'package:nova/pages/login_page.dart';
@@ -47,7 +46,7 @@ class LogoutDialogBox extends StatelessWidget {
                     child: Center(
                       child: customText(
                           text: 'Cancel',
-                          size: 16.sp,
+                          size: 16,
                           color: primaryBg,
                           fontWeight: FontWeight.w500),
                     ),
@@ -74,7 +73,7 @@ class LogoutDialogBox extends StatelessWidget {
                     child: Center(
                       child: customText(
                           text: 'Logout',
-                          size: 16.sp,
+                          size: 16,
                           color: primaryBg,
                           fontWeight: FontWeight.w600),
                     ),

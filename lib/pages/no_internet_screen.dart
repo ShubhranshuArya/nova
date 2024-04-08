@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nova/constants/colors.dart';
 import 'package:nova/constants/strings.dart';
 import 'package:nova/constants/widgets.dart';
@@ -19,7 +18,7 @@ class NoInternetScreen extends StatelessWidget {
             Align(
               alignment: Alignment.center,
               child: Padding(
-                padding: EdgeInsets.only(bottom: 0.h,),
+                padding:const EdgeInsets.only(bottom: 0,),
                 child: Image.asset(
                   noInternetImg,
                   width: 200,
@@ -29,9 +28,9 @@ class NoInternetScreen extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(top: 40.h),
+              padding: const EdgeInsets.only(top: 40),
               child: SizedBox(
-                width: 300.w,
+                width: 300,
                 child: customText(
                   text: noInternetText,
                   size: 24,
@@ -41,7 +40,7 @@ class NoInternetScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 80.h,)
+           const SizedBox(height: 80,)
           ],
         ),
       ),
