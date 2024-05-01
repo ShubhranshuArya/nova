@@ -1,16 +1,27 @@
-# nova
+# Nova - Open Bank Project App
+Welcome to the Open Bank Project Flutter App repository! This app is designed to provide authorized users with easy access to their bank account information through a sleek and intuitive user interface built with Flutter.
 
-A new Flutter project.
+## Overview
+This app utilizes the Open Bank Project API to securely log in users and retrieve data from their associated bank accounts. Users can conveniently view all the banks they are connected to, select a specific bank and account, and access basic information such as account balance and recent transactions.
 
-## Getting Started
+## Features
+- User Authentication: Securely log in authorized users using the Open Bank Project API credentials.
+- Bank Selection: Display a list of all connected banks for the user to choose from.
+- Account Selection: Allow users to select a specific bank account to view detailed information.
+- Account Details: Provide users with access to basic account details including balance and recent transactions.
+- Beautiful UI: Build a visually appealing and user-friendly interface using Flutter.
 
-This project is a starting point for a Flutter application.
+## Usage
+To run the app locally, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+- Clone this repository to your local machine.
+- Set up your Open Bank Project API credentials in the project.
+- Run the app on your preferred emulator or physical device.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## App Demo
+https://github.com/ShubhranshuArya/nova/assets/77967955/473acd97-3b6f-4ce7-b767-a5c78af874d3
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Contributions
+Contributions to this project are welcome! If you have any ideas for enhancements or would like to report a bug, feel free to submit an issue or pull request.
+
+Happy coding! 🚀
